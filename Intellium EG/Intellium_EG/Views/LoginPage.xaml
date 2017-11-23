@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Intellium_EG.LoginPage"
+             xmlns:vm="clr-namespace:Intellium_EG;">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="server_connect.png" VerticalOptions="Center" HeightRequest="100" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label Text="Server name" FontSize="Medium" />
+                <Entry x:Name="serverEntry" FontSize="Medium" />
+                <Label Text="Username" FontSize="Medium"/>
+                <Entry x:Name="usernameEntry" Placeholder="username"/>
+                <Label Text="Password" FontSize="Medium"/>
+                <Entry x:Name="passwordEntry" IsPassword="true"/>
+                <Button Text="Login" Clicked="OnLoginButtonClicked"/>
+                <Label x:Name="messageLabel"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
